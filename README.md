@@ -26,7 +26,11 @@ npm install chart.js@2
 
 #### Goocle Chart
 
-- chart.js 보다 사용이 간편 
+- 참고
+
+```bash
+npm i vue-google-charts
+```
 
 ```javascript
 import { GChart } from "vue-google-charts";
@@ -47,15 +51,24 @@ import { GChart } from "vue-google-charts";
 #### Chart.js
 
 - 가져와서 컴포넌트 형식으로 사용할 수 있음
+- 구글차트와 같은 방식으로도 쓸 수 있다. (어떤게 편할지 정해서 사용)
 - js 형태만 컴포넌트에 있다.
 - https://www.chartjs.org/docs/master/ 참고해서 사용
 
-
+```javascript
+import { Bar } from 'vue-chartjs'
+```
 
 ```javascript
-mounted() {
-    this.renderChart(data,Option);
+import { Line } from 'vue-chartjs'
+
+export default {
+  extends: Line,
+  props: ['chartData', 'options'],
+  mounted () {
+    this.renderChart(this.chartData, this.options)
   }
+}
 ```
 
 
